@@ -92,41 +92,41 @@ Commande utilisee : `adb devices`
 
 ![Detection de l'AVD](https://github.com/user-attachments/assets/9cec6146-5abe-42e2-9877-0ab271d35bbe)
 
-*Legende : l'emulateur `emulator-5554` est bien detecte par ADB avec l'etat `device`, ce qui confirme que l'AVD est pret pour le test.*
+*l'emulateur `emulator-5554` est bien detecte par ADB avec l'etat `device`, ce qui confirme que l'AVD est pret pour le test.*
 
 ### 2. Elevation de privileges et confirmation root
 Commandes utilisees : `adb root` puis `adb shell id`
 
 ![Elevation de privileges et confirmation root](https://github.com/user-attachments/assets/0c8c089c-02fb-4454-80e9-8008cc9762e4)
 
-*Legende : le service ADB a ete redemarre en mode root, puis la commande `adb shell id` retourne `uid=0(root)`, confirmant l'obtention des privileges super-utilisateur sur l'AVD.*
+*le service ADB a ete redemarre en mode root, puis la commande `adb shell id` retourne `uid=0(root)`, confirmant l'obtention des privileges super-utilisateur sur l'AVD.*
 
 ### 3. Verification des proprietes de boot
 Commandes utilisees : `adb shell getprop ro.boot.verifiedbootstate`, `adb shell getprop ro.boot.veritymode`, `adb shell getprop ro.boot.vbmeta.device_state`
 
 ![Verification des proprietes de boot](https://github.com/user-attachments/assets/ef86f0f6-25d2-48b2-bf21-8ef41bd2547a)
 
-*Legende : la propriete `ro.boot.veritymode` retourne `enforcing`, tandis que `ro.boot.verifiedbootstate` et `ro.boot.vbmeta.device_state` ne sont pas renseignees sur cette image d'emulateur.*
+*Lla propriete `ro.boot.veritymode` retourne `enforcing`, tandis que `ro.boot.verifiedbootstate` et `ro.boot.vbmeta.device_state` ne sont pas renseignees sur cette image d'emulateur.*
 
 ### 4. Installation de l'application
 Commande utilisee : `adb install FireStorm.apk`
 
 ![Installation de l'application](https://github.com/user-attachments/assets/4c550e04-f2e2-42f9-a91b-f80b735f7907)
 
-*Legende : l'installation de l'application de test `FireStorm.apk` s'est terminee avec succes sur l'AVD.*
+*l'installation de l'application de test `FireStorm.apk` s'est terminee avec succes sur l'AVD.*
 
 ### 5. Application ouverte
 
 ![Application ouverte](https://github.com/user-attachments/assets/fb4ea1a4-d14f-4afc-acb8-1d89ab24c7ee)
 
-*Legende : l'application de test est bien lancee sur l'emulateur, ce qui confirme que l'installation et l'execution sont fonctionnelles dans l'environnement de laboratoire.*
+*l'application de test est bien lancee sur l'emulateur, ce qui confirme que l'installation et l'execution sont fonctionnelles dans l'environnement de laboratoire.*
 
 ### 6. Preparation de la remise a zero
 Action utilisee : `Android Studio > Device Manager > Wipe Data`
 
 ![Preparation de la remise a zero](https://github.com/user-attachments/assets/583bbd5c-8009-476f-a706-a7cc7c78e0c0)
 
-*Legende : l'option `Wipe Data` est disponible sur l'AVD Pixel 4a et constitue la methode retenue pour remettre l'environnement de test a zero en fin de seance.*
+*l'option `Wipe Data` est disponible sur l'AVD Pixel 4a et constitue la methode retenue pour remettre l'environnement de test a zero en fin de seance.*
 
 
 ## Checklist de reset
