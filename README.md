@@ -88,39 +88,45 @@ Observation sur l'AVD teste :
 ## Preuves
 
 ### 1. Detection de l'AVD
-`adb devices`
+Commande utilisee : `adb devices`
 
-<img width="355" height="87" alt="01-adb-devices" src="https://github.com/user-attachments/assets/9cec6146-5abe-42e2-9877-0ab271d35bbe" />
+![Detection de l'AVD](https://github.com/user-attachments/assets/9cec6146-5abe-42e2-9877-0ab271d35bbe)
 
+*Legende : l'emulateur `emulator-5554` est bien detecte par ADB avec l'etat `device`, ce qui confirme que l'AVD est pret pour le test.*
 
 ### 2. Elevation de privileges et confirmation root
-`adb root` puis `adb shell id`
+Commandes utilisees : `adb root` puis `adb shell id`
 
-<img width="1108" height="158" alt="02-adb-root-id" src="https://github.com/user-attachments/assets/0c8c089c-02fb-4454-80e9-8008cc9762e4" />
+![Elevation de privileges et confirmation root](https://github.com/user-attachments/assets/0c8c089c-02fb-4454-80e9-8008cc9762e4)
+
+*Legende : le service ADB a ete redemarre en mode root, puis la commande `adb shell id` retourne `uid=0(root)`, confirmant l'obtention des privileges super-utilisateur sur l'AVD.*
 
 ### 3. Verification des proprietes de boot
-`adb shell getprop ro.boot.verifiedbootstate`  
-`adb shell getprop ro.boot.veritymode`  
-`adb shell getprop ro.boot.vbmeta.device_state`
+Commandes utilisees : `adb shell getprop ro.boot.verifiedbootstate`, `adb shell getprop ro.boot.veritymode`, `adb shell getprop ro.boot.vbmeta.device_state`
 
-<img width="690" height="170" alt="03-verified-boot" src="https://github.com/user-attachments/assets/ef86f0f6-25d2-48b2-bf21-8ef41bd2547a" />
+![Verification des proprietes de boot](https://github.com/user-attachments/assets/ef86f0f6-25d2-48b2-bf21-8ef41bd2547a)
 
+*Legende : la propriete `ro.boot.veritymode` retourne `enforcing`, tandis que `ro.boot.verifiedbootstate` et `ro.boot.vbmeta.device_state` ne sont pas renseignees sur cette image d'emulateur.*
 
 ### 4. Installation de l'application
-`adb install FireStorm.apk`
+Commande utilisee : `adb install FireStorm.apk`
 
-<img width="491" height="71" alt="04-adb-install" src="https://github.com/user-attachments/assets/4c550e04-f2e2-42f9-a91b-f80b735f7907" />
+![Installation de l'application](https://github.com/user-attachments/assets/4c550e04-f2e2-42f9-a91b-f80b735f7907)
 
+*Legende : l'installation de l'application de test `FireStorm.apk` s'est terminee avec succes sur l'AVD.*
 
 ### 5. Application ouverte
 
-<img width="250" height="509" alt="06-app-open" src="https://github.com/user-attachments/assets/fb4ea1a4-d14f-4afc-acb8-1d89ab24c7ee" />
+![Application ouverte](https://github.com/user-attachments/assets/fb4ea1a4-d14f-4afc-acb8-1d89ab24c7ee)
 
+*Legende : l'application de test est bien lancee sur l'emulateur, ce qui confirme que l'installation et l'execution sont fonctionnelles dans l'environnement de laboratoire.*
 
 ### 6. Preparation de la remise a zero
-`Android Studio > Device Manager > Wipe Data`
+Action utilisee : `Android Studio > Device Manager > Wipe Data`
 
-<img width="512" height="320" alt="05-wipe-data" src="https://github.com/user-attachments/assets/583bbd5c-8009-476f-a706-a7cc7c78e0c0" />
+![Preparation de la remise a zero](https://github.com/user-attachments/assets/583bbd5c-8009-476f-a706-a7cc7c78e0c0)
+
+*Legende : l'option `Wipe Data` est disponible sur l'AVD Pixel 4a et constitue la methode retenue pour remettre l'environnement de test a zero en fin de seance.*
 
 
 ## Checklist de reset
