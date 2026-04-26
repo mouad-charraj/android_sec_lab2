@@ -12,7 +12,6 @@ Comprendre le rooting sur un environnement Android de laboratoire, observer son 
 | Support | AVD Pixel 4a |
 | Android | API 37 x86_64 |
 | Application | FireStorm.apk |
-| Version app | Non affichee dans la capture |
 | Donnees | Fictives uniquement |
 | Reseau | Test |
 | Objectif | Comprendre rooting et impacts |
@@ -91,33 +90,38 @@ Observation sur l'AVD teste :
 ### 1. Detection de l'AVD
 `adb devices`
 
-![ADB devices](image/01-adb-devices.png)
+<img width="355" height="87" alt="01-adb-devices" src="https://github.com/user-attachments/assets/9cec6146-5abe-42e2-9877-0ab271d35bbe" />
+
 
 ### 2. Elevation de privileges et confirmation root
 `adb root` puis `adb shell id`
 
-![ADB root et id](image/02-adb-root-id.png)
+<img width="1108" height="158" alt="02-adb-root-id" src="https://github.com/user-attachments/assets/0c8c089c-02fb-4454-80e9-8008cc9762e4" />
 
 ### 3. Verification des proprietes de boot
 `adb shell getprop ro.boot.verifiedbootstate`  
 `adb shell getprop ro.boot.veritymode`  
 `adb shell getprop ro.boot.vbmeta.device_state`
 
-![Verified Boot](image/03-verified-boot.png)
+<img width="690" height="170" alt="03-verified-boot" src="https://github.com/user-attachments/assets/ef86f0f6-25d2-48b2-bf21-8ef41bd2547a" />
+
 
 ### 4. Installation de l'application
 `adb install FireStorm.apk`
 
-![Installation APK](image/04-adb-install.png)
+<img width="491" height="71" alt="04-adb-install" src="https://github.com/user-attachments/assets/4c550e04-f2e2-42f9-a91b-f80b735f7907" />
+
 
 ### 5. Application ouverte
 
-![Application ouverte](image/06-app-open.png)
+<img width="250" height="509" alt="06-app-open" src="https://github.com/user-attachments/assets/fb4ea1a4-d14f-4afc-acb8-1d89ab24c7ee" />
+
 
 ### 6. Preparation de la remise a zero
 `Android Studio > Device Manager > Wipe Data`
 
-![Wipe Data](image/05-wipe-data.png)
+<img width="512" height="320" alt="05-wipe-data" src="https://github.com/user-attachments/assets/583bbd5c-8009-476f-a706-a7cc7c78e0c0" />
+
 
 ## Checklist de reset
 
